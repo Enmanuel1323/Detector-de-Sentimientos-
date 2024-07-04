@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consejos Emocionales</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Consejos Emocionales</h1>
+        <div class="menu">
+            <button class="menu-item" onclick="mostrarConsejos('positive')">Positivo</button>
+            <button class="menu-item" onclick="mostrarConsejos('negative')">Negativo</button>
+            <button class="menu-item" onclick="mostrarConsejos('neutral')">Neutral</button>
+        </div>
+        <div class="consejos-list" id="consejos-list">
+            <h2 id="sentimiento-title"></h2>
+            <p id="consejo-item"></p>
+        </div>
+        <a href="/" class="button">Volver al Detector de Sentimientos</a>
+    </div>
+    <script>
+        
+        var consejosDetallados = {
+            positive: "Ser positivo no siempre es fácil, pero es crucial para tu bienestar. La positividad te ayuda a mantenerte motivado y a afrontar los desafíos con una mentalidad constructiva. Puedes practicar la gratitud, hacer ejercicio regularmente y rodearte de personas que te apoyen.",
+            negative: "Los momentos negativos son inevitables, pero puedes aprender a gestionarlos de manera efectiva. Busca el apoyo de amigos y familiares, y no dudes en hablar con un profesional si lo necesitas. Encuentra maneras de liberar el estrés, como el ejercicio o la meditación.",
+            neutral: "Sentirse neutral puede ser un signo de equilibrio en tu vida. Mantén este equilibrio encontrando tiempo para tus hobbies y actividades que disfrutes. Cuida de tu bienestar físico y emocional y practica la gratitud, apreciando las cosas buenas en tu vida."
+        };
+
+        function mostrarConsejos(sentimiento) {
+            var listaConsejos = document.getElementById('consejos-list');
+            var tituloSentimiento = document.getElementById('sentimiento-title');
+            var consejoItem = document.getElementById('consejo-item');
+            
+            // Títulos en español para los sentimientos
+            var sentimientosTitulos = {
+                positive: 'Positivo',
+                negative: 'Negativo',
+                neutral: 'Neutral'
+            };
+
+            // Establecer el título según el sentimiento
+            tituloSentimiento.innerText = sentimientosTitulos[sentimiento];
+            
+            // Mostrar el consejo correspondiente al sentimiento seleccionado
+            consejoItem.innerText = consejosDetallados[sentimiento];
+            
+            listaConsejos.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

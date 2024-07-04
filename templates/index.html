@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detección de Sentimientos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detección de Sentimientos</h1>
+        <textarea id="texto" rows="4" cols="50" placeholder="Escribe tu texto aquí..."></textarea>
+        <br>
+        <button id="detectarBtn">Detectar Sentimiento</button>
+        <a href="{{ url_for('consejos_page') }}" class="button">Ver Consejos Detallados</a>
+        <div id="resultado">
+            <h2>Sentimiento Detectado: <span id="sentimiento"></span></h2>
+            <h3>Consejos:</h3>
+            <ul id="consejos"></ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
